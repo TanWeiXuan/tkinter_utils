@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tkinter-utils"
+version = "0.2.0"
+description = "Lean reusable components for tkinter applications"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+images = ["Pillow>=10"]
+plots = ["Matplotlib>=3.7"]
+all = ["Pillow>=10", "Matplotlib>=3.7"]
+
+[tool.setuptools.packages.find]
+include = ["tkinter_utils*", "azure_ttk_theme*"]
+
+[tool.setuptools.package-data]
+azure_ttk_theme = [
+    "*.tcl",
+    "LICENSE",
+    "theme/*.tcl",
+    "theme/light/*.png",
+    "theme/dark/*.png",
+]
